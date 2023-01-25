@@ -13,40 +13,19 @@ class Overworld {
             this.context.drawImage(map, 0, 0)
         }
         
-        const x = 5;
-        const y = 6;
-        
-        const hero = new Image();
-        hero.src = "images/characters/people/hero.png"
-        hero.onload = () => {
-            this.context.drawImage(
-                hero,
-                0,
-                0,
-                32,
-                32,
-                x * 16 - 8,
-                y * 16 - 16,
-                32,
-                32
-            )
-        }
+        const hero = new GameObject({
+            x: 5,
+            y: 6,
+        });
+        const npc1 = new GameObject({
+            x: 7,
+            y: 9,
+            src: "images/characters/people/npc1.png"
+        })
 
-        const sahdow = new Image();
-        sahdow.src = "images/characters/shadow.png"
-        sahdow.onload = () => {
-            this.context.drawImage(
-                sahdow,
-                0,
-                0,
-                32,
-                32,
-                x * 16 - 8,
-                y * 16 - 16,
-                32,
-                32
-            )
-        }
+        hero.sprite.draw(this.context);
+        npc1.sprite.draw(this.context);
+
 
     }
 }
